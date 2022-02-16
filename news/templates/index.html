@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Content -->
+<div class="w3-light-grey w3-container w3-padding-64">
+
+<!-- Featured News -->
+<div id="featured" class="w3-row-padding w3-margin-bottom" >
+  <div class="w3-col m6">
+    <div class="w3-white">
+      <img src="{% if featured_1.image_url %}{{ featured_1.image_url }}{% else %}https://picsum.photos/300/200?random=1 {% endif %}" style="width:100%;max-height:350px">
+      <div class="w3-display-container w3-padding">
+        <div class="w3-xlarge w3-opacity-min"><a href="{{ featured_1.link }}" target="_blank"><b>{{ featured_1.title|truncatewords:12 }}</b></a></div>
+        <small class="w3-display-bottomleft w3-padding">{{ featured_1.category|first }}</small>
+      </div>
+    </div>
+  </div>
+  <div class="w3-col m3">
+    <div class="w3-white">
+      <img src="{% if featured_2.image_url %}{{ featured_2.image_url }}{% else %}https://picsum.photos/300/200?random=2{% endif %}" style="width:100%;max-height:200px">
+      <div class="w3-display-container w3-padding">
+        <div class="w3-large w3-opacity-min"><a href="{{ featured_2.link }}" target="_blank"><b>{{ featured_2.title }}</b></a></div>
+        <small class="w3-display-bottomleft w3-padding">{{ featured_2.category|first }}</small>
+      </div>
+    </div>
+  </div>
+  <div class="w3-col m3">
+    <div class="w3-white">
+      <img src="{% if featured_3.image_url %}{{ featured_3.image_url }}{% else %}https://picsum.photos/300/200?random=3{% endif %}" style="width:100%;max-height:200px">
+      <div class="w3-display-container w3-padding">
+        <div class="w3-large w3-opacity-min"><a href="{{ featured_3.link }}" target="_blank"><b>{{ featured_3.title }}</b></a></div>
+        <small class="w3-display-bottomleft w3-padding">{{ featured_3.category|first }}</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Stories -->
+<div id="top-news">
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-xlarge w3-container w3-padding-32 w3-opacity"><b>More top stories</b></div>
+    {% for news in top_news %}
+    <div class="w3-third">
+      <div class="w3-white">
+        <img src="{% if news.image_url %}{{ news.image_url }}{% else %}https://picsum.photos/300/200?random{% endif %}" style="width:100%;max-height:240px">
+        <div class="w3-display-container w3-padding">
+          <div class="w3-large w3-opacity-min"><b><a href="{{ news.link }}" target="_blank">{{ news.title|truncatewords:15 }}</a></b></div>
+          <small class="w3-display-bottomleft w3-padding">{{ news.category|first }}</small>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>  
+</div>
+
+<!-- Main Cats -->
+<div id="main" class="w3-row-padding">
+
+  <!-- Category News -->
+  <div class="w3-col m9 w3-margin-top">
+    <div class="w3-xlarge w3-container w3-padding-16 w3-opacity"><b><a href="">Sports News</a> &#8250;</b></div>
+    <div class="w3-row">
+      {% for news in sports_news %}
+      <div class="w3-third w3-white w3-margin-right w3-margin-bottom" style="width:32%">
+        <img src="{% if news.image_url %}{{ news.image_url }}{% else %}https://picsum.photos/300/200?random=4{% endif %}" style="width:100%; height: 200px;">
+        <div class="w3-display-container w3-padding">
+          <div class="w3-large w3-opacity-min"><b><a href="{{ news.link }}" target="_blank">{{ news.title|truncatewords:10 }}</a></b></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="w3-xlarge w3-container w3-padding-16 w3-opacity"><b><a href="">Technology News</a> &#8250;</b></div>
+    <div class="w3-row">
+      {% for news in technology_news %}
+      <div class="w3-third w3-white w3-margin-right w3-margin-bottom" style="width:32%">
+        <img src="{% if news.image_url %}{{ news.image_url }}{% else %}https://picsum.photos/300/200?random=6{% endif %}" style="width:100%; height: 200px;">
+        <div class="w3-display-container w3-padding">
+          <div class="w3-large w3-opacity-min"><b><a href="{{ news.link }}" target="_blank">{{ news.title|truncatewords:10 }}</a></b></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="w3-xlarge w3-container w3-padding-16 w3-opacity"><b><a href="">Science News</a> &#8250;</b></div>
+    <div class="w3-row">
+      {% for news in science_news %}
+      <div class="w3-third w3-white w3-margin-right w3-margin-bottom" style="width:32%">
+        <img src="{% if news.image_url %}{{ news.image_url }}{% else %}https://picsum.photos/300/200?random=7{% endif %}" style="width:100%; height: 200px;">
+        <div class="w3-display-container w3-padding">
+          <div class="w3-large w3-opacity-min"><b><a href="{{ news.link }}" target="_blank">{{ news.title|truncatewords:10 }}</a></b></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="w3-col m3 w3-margin-top">
+    <div class="w3-center w3-white" style="height: 300px;">
+      place you advert here
+    </div>
+    <h4 class="w3-black w3-opacity-min w3-padding">CATEGORIES</h4>
+    <ul class="w3-ul">
+      <li>Business</li>
+      <li>Health</li>
+      <li>Politics</li>
+      <li>Science</li>
+      <li>Sports</li>
+      <li>Technology</li>
+      <li>World</li>
+    </ul class="w3-ul">
+    <div class="w3-panel w3-blue w3-padding">
+      <i class="fa fa-facebook"></i> Follow us on facebook
+    </div>
+    <div class="w3-panel w3-blue w3-padding">
+      <i class="fa fa-twitter"></i> Follow us on twitter
+    </div>
+    <div class="w3-center w3-white" style="height: 300px;">
+      place you advert here
+    </div>
+  </aside>
+
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+  var boxes = document.getElementsByClassName('w3-third');
+  for (let i = 1; i < boxes.length + 1; i++) {
+    if (i % 3 == 0) {
+      boxes[i-1].classList.remove('w3-margin-right')
+    }
+  }
+</script>
+
+{% endblock content %}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Django Times</title>
+	<link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<style type="text/css">
+  		#featured .w3-white {
+      		height: 480px;
+      		overflow: hidden;
+    	}
+	    #featured .m3 .w3-display-container {
+	      height: 270px;
+	    }
+	    #featured .m6 .w3-display-container, #top-news .w3-display-container, #categories .w3-display-container {
+	      height: 120px;
+	    }
+	    #top-news .w3-white, #categories .w3-white {
+	      height: 370px;
+	    }
+	    a {
+	      text-decoration: none;
+	    }
+	    a:hover {
+	      text-decoration: underline;
+	    }
+	    #main .w3-white {
+	      height: 320px;
+	    }
+	    #main .w3-display-container {
+	      height: 110px;
+	    }
+	    aside {
+	      position: sticky;
+	      top: 30px;
+	    }
+	    #main .w3
+  	</style>
+</head>
+<body>
+{% include 'navbar.html' %}
+
+{% block content %}
+{% endblock content %}
+
+{% include 'footer.html' %}
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Content -->
+<div class="w3-light-grey w3-container w3-padding-64">
+<h3 class="w3-grey w3-margin w3-padding">More <b>{{ category|title }}</b> news</h3>
+<div class="w3-row-padding">
+	{% for news in category_news %}
+	<div class="w3-third w3-margin-bottom">
+		<img src="{% if news.image_url %}{{ news.image_url }}{% else %}https://picsum.photos/300/200?random=4{% endif %}" style="width: 100%; height: 200px;">
+		<div class="w3-white w3-padding" style="height: 400px">
+			<small>{{ news.pubDate }}</small>
+			<h4>{{ news.title }}</h4>
+			<p>{{ news.content|truncatewords:50 }}</p>
+			<div class="w3-panel">
+				<span class="w3-left">src: {{ news.source_id }}</span><span class="w3-right"><a class="w3-button w3-grey" href="{{ news.link }}" target="_blank">view</a></span>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
+</div>
+
+{% endblock content %}

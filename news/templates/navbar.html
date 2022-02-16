@@ -1,0 +1,13 @@
+<!-- Navbar -->
+<nav class="w3-bar w3-container w3-padding w3-black w3-opacity-min">
+  <a href="{% url 'index' %}" class="w3-bar-item w3-button w3-margin-right"><span class="w3-tag w3-white"><b>TDT</b></span> The Django Times</a>
+  <div class="w3-middle w3-hide-small">
+    <a href="{% url 'category' 'business' %}" class="w3-margin-left w3-bar-item w3-button">Business</a>
+    <a href="{% url 'category' 'health' %}" class="w3-bar-item w3-button">Health</a>
+    <a href="{% url 'category' 'polictics' %}" class="w3-bar-item w3-button">Politics</a>
+    <a href="{% url 'category' 'science' %}" class="w3-bar-item w3-button">Science</a>
+    <a href="{% url 'category' 'sports' %}" class="w3-bar-item w3-button">Sports</a>
+    <a href="{% url 'category' 'technology' %}" class="w3-bar-item w3-button">Technology</a>
+    <a href="{% url 'category' 'world' %}" class="w3-bar-item w3-button">World</a>
+  </div>
+</nav>
